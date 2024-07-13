@@ -1,0 +1,8 @@
+# No non-root user -> Ansible needs root rights anyway
+AVD-DS-0002
+
+# With Buildkit cache-mounts there is no reason to call `dnf clean`; in fact it would slow things down the next time
+AVD-DS-0019
+
+# The container starts with systemd and will be controlled externally -> no reason for health check
+AVD-DS-0026

@@ -1,0 +1,73 @@
+---
+version: "3"
+
+output: group
+
+vars:
+  CREATED:
+    sh: date -u +'%Y-%m-%dT%H:%M:%SZ'
+  NAME: docker-almalinux8-ansible
+  ORG: robinwalterfit
+  REVISION:
+    sh: git log -n 1 --pretty=format:%H
+  VERSION: latest
+
+tasks:
+  build:
+    desc: Build the image for the current platform
+    summary: |
+      Build the image for the current platform.
+
+      The Docker Image will be built with Buildkit. However, for performance reasons this task will
+      only build the image for the current platform. This image will only be tagged with the user /
+      organisation identifier and the image name. The tag will be `local`.
+    deps: []
+    cmds:
+      - |
+        docker buildx build \
+          --build-arg CREATED="{{.CREATED}}" \
+          --build-arg REVISION="{{.REVISION}}" \
+          --build-arg VERSION="{{.VERSION}}" \
+          --tag {{.ORG}}/{{.NAME}}:local \
+          .
+
+  cross-build:
+    desc: Build the image for all platforms
+    summary: |
+      Build the image for all platforms.
+
+      The Docker Image will be built with Buildkit. This task will create a cross-platform built of
+      the image. This image will only be tagged with the user / organisation identifier and the
+      image name. The tag will be `local`.
+    deps: []
+    cmds:
+      - |
+        docker buildx build \
+          --build-arg CREATED="{{.CREATED}}" \
+          --build-arg REVISION="{{.REVISION}}" \
+          --build-arg VERSION="{{.VERSION}}" \
+          --platform linux/amd64,linux/arm64 \
+          --tag {{.ORG}}/{{.NAME}}:local \
+          .
+
+  deploy:
+    desc: Deploy the image to Docker Hub
+    summary: |
+      Deploy the image to Docker Hub.
+
+      This task will manually create a cross-platform built, add additional tags to the image and then push it to the registry.
+    deps: [mega-linter]
+    cmds:
+      - task: cross-build
+      - docker image tag {{.ORG}}/{{.NAME}}:local {{.REGISTRY}}/{{.ORG}}/{{.NAME}}:latest
+      - docker image push {{.ORG}}/{{.NAME}}:latest
+
+  mega-linter:
+    desc: Run mega linter
+    summary: |
+      Run mega linter.
+
+      This task will use `npx` to run `mega-linter` locally.
+    deps: []
+    cmds:
+      - npx mega-linter-runner --flavor ci_light

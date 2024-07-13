@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "bierner.github-markdown-preview",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "emilast.logfilehighlighter",
+    "exiasr.hadolint",
+    "gruntfuggly.todo-tree",
+    "ms-azuretools.vscode-docker",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-scientific-terms",
+    "tamasfe.even-better-toml",
+    "timonwong.shellcheck",
+    "wayou.vscode-todo-highlight"
+  ]
+}
