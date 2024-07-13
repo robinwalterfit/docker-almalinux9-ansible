@@ -1,9 +1,7 @@
 ---
 ignored:
   - DL3013  # Pin versions in pip install.
-  - DL3040  # `dnf clean all` missing after dnf command. => Cache is managed by the BUILDKIT feature
   - DL3041  # Specify version with `dnf install -y <package>-<version>`.
-  - DL3042  # Avoid use of cache directory with pip. Use `pip install --no-cache-dir <package>` => We use Buildkit's cache mounts
 
 trustedRegistries:
   - "docker.io"
