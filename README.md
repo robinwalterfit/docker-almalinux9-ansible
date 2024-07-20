@@ -16,7 +16,7 @@
     <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&amp;logoColor=white&amp;style=flat-square">
   </a>
   <a href="https://hub.docker.com/r/robinwalterfit/docker-almalinux9-ansible">
-    <img alt="Docker pulls" src="https://img.shields.io/docker/pulls/robinwalterfit/docker-almalinux9-ansible&amp;style=flat-square">
+    <img alt="Docker pulls" src="https://img.shields.io/docker/pulls/robinwalterfit/docker-almalinux9-ansible?logo=docker&amp;style=flat-square">
   </a>
   <a href="https://github.com/robinwalterfit/docker-almalinux9-ansible/actions">
     <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&amp;logoColor=white&amp;style=flat-square">
