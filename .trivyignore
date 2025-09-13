@@ -1,5 +1,0 @@
-# No non-root user -> Ansible needs root rights anyway
-AVD-DS-0002
-
-# The container starts with systemd and will be controlled externally -> no reason for health check
-AVD-DS-0026

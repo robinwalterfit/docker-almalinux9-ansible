@@ -110,6 +110,9 @@ lefthook-local.yaml
 # Local configuration directory
 .lefthook-local/
 
-### Mega Linter ###
-# Reports
-megalinter-reports/
+### Taskfile ###
+# https://taskfile.dev/usage/#by-fingerprinting-locally-generated-files-and-their-sources
+.task/
+# Local overwrites
+Taskfile.custom.yaml
+Taskfile.custom.yml

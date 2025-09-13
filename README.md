@@ -30,9 +30,6 @@
   <a href="https://taskfile.dev/">
     <img alt="Taskfile" src="https://img.shields.io/badge/Taskfile-29BEB0?logo=task&amp;logoColor=white&amp;style=flat-square">
   </a>
-  <a href="https://github.com/robinwalterfit/docker-almalinux9-ansible/actions?query=workflow%3AMegaLinter+branch%3Amain">
-    <img alt="MegaLinter" src="https://img.shields.io/github/actions/workflow/status/robinwalterfit/docker-almalinux9-ansible/mega-linter.yml?branch=main&amp;event=push&amp;style=flat-square&amp;logo=github&amp;logoColor=white">
-  </a>
 </p>
 
 <details>
@@ -195,7 +192,6 @@ You want to contribute to this project? Great! Please make sure to read
   - `.gitignore` Generator: [https://gitignore.io](https://gitignore.io)
   - hadolint: [https://hadolint.github.io/hadolint/](https://hadolint.github.io/hadolint/)
   - Lefthook: [https://github.com/evilmartians/lefthook](https://github.com/evilmartians/lefthook)
-  - MegaLinter: [https://megalinter.io](https://megalinter.io)
   - README-Template.md: [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
   - Taskfile: [https://taskfile.dev/](https://taskfile.dev/)
   - Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
